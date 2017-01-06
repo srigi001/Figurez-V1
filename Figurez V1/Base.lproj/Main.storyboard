@@ -1,26 +1,336 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="doz-Cr-GBc" userLabel="BG Lobby">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG Game" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-AU-4i5">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-FO-1oB" userLabel="Chest Claim View">
+                                <rect key="frame" x="58" y="34" width="551" height="307"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rare_Treasure_Chest.png" translatesAutoresizingMaskIntoConstraints="NO" id="3t3-ur-eb6">
+                                        <rect key="frame" x="20" y="29" width="186" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.26957783460000001" blue="0.83628571309999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2R-Jo-ihH" userLabel="Game Cheat">
+                                <rect key="frame" x="299" y="87" width="284" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9P-Ej-yUp">
+                                        <rect key="frame" x="8" y="8" width="268" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Chest flow"/>
+                                        <connections>
+                                            <action selector="gameCheat1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="og5-0X-Jc2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cib-Ar-eBh">
+                                        <rect key="frame" x="8" y="46" width="268" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Chest flow + evolution"/>
+                                        <connections>
+                                            <action selector="gameCheat2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTG-by-MSs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dl-cZ-8sx">
+                                        <rect key="frame" x="8" y="84" width="268" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Chest flow+evolution+rank up"/>
+                                        <connections>
+                                            <action selector="gameCheat3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ruy-Nu-QTY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aI1-Wp-RNa">
+                                        <rect key="frame" x="8" y="122" width="268" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Chest flow during FS"/>
+                                        <connections>
+                                            <action selector="gameCheat4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dt2-gh-KGn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-BD-yCf" userLabel="Chest Button">
+                                <rect key="frame" x="150" y="250" width="80" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Rare_Treasure_Chest.png"/>
+                                <connections>
+                                    <action selector="chestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cDh-MZ-OaH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Collect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-CU-fVS">
+                                <rect key="frame" x="153" y="297" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SED-I4-GdB" userLabel="Figurez button">
+                                <rect key="frame" x="0.0" y="245" width="139" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="OFj-bp-DKC"/>
+                                    <constraint firstAttribute="height" constant="40" id="WLo-bj-Veu"/>
+                                </constraints>
+                                <state key="normal" title="Figurez of Fortune"/>
+                                <connections>
+                                    <action selector="figurezButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcX-UX-rM4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC4-x3-h8f" userLabel="expand Button">
+                                <rect key="frame" x="139" y="243" width="47" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CUR-Il-aaI"/>
+                                    <constraint firstAttribute="width" constant="47" id="w4B-DN-uTz"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="arrow1-right-512.png"/>
+                                <connections>
+                                    <action selector="figurezExpandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BmN-3B-Tcp"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-Gv-SwI" userLabel="Figurez View">
+                                <rect key="frame" x="20" y="20" width="627" height="335"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-ex-DqR">
+                                        <rect key="frame" x="20" y="105" width="554" height="161"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bog-Yh-DL7">
+                                            <size key="itemSize" width="149" height="195"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FigureCell" id="4I4-lE-hLJ" customClass="FigurezCollectionViewCell">
+                                                <rect key="frame" x="0.0" y="-17" width="149" height="195"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="149" height="195"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uXH-Qx-Q0h" userLabel="Figure Img View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="149" height="195"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="uXH-Qx-Q0h" secondAttribute="trailing" id="HZM-9P-TIG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uXH-Qx-Q0h" secondAttribute="trailing" id="Lh6-lE-XVB"/>
+                                                    <constraint firstItem="uXH-Qx-Q0h" firstAttribute="leading" secondItem="4I4-lE-hLJ" secondAttribute="leading" id="NoQ-BU-3S0"/>
+                                                    <constraint firstItem="uXH-Qx-Q0h" firstAttribute="leading" secondItem="4I4-lE-hLJ" secondAttribute="leading" id="P43-9k-mFs"/>
+                                                    <constraint firstItem="uXH-Qx-Q0h" firstAttribute="top" secondItem="4I4-lE-hLJ" secondAttribute="top" id="PV5-l9-lYJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uXH-Qx-Q0h" secondAttribute="bottom" id="j3h-nf-teU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uXH-Qx-Q0h" secondAttribute="bottom" id="o64-Bn-Fva"/>
+                                                    <constraint firstItem="uXH-Qx-Q0h" firstAttribute="top" secondItem="4I4-lE-hLJ" secondAttribute="top" id="w3c-bR-yHL"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imgView" destination="uXH-Qx-Q0h" id="1tF-9z-OgA"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="DQr-Pw-wzF"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="LM0-Yp-9ap"/>
+                                        </connections>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYX-9T-i5Z" userLabel="Dismiss Button">
+                                        <rect key="frame" x="569" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="SrW-yW-fSd"/>
+                                            <constraint firstAttribute="height" constant="50" id="rO6-yX-Iby"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="close-button.png"/>
+                                        <connections>
+                                            <action selector="figurezViewDismissed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k2T-Sg-mdc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh9-ho-2MQ">
+                                        <rect key="frame" x="289" y="290" width="50" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="cah-gs-fk7"/>
+                                        </constraints>
+                                        <state key="normal" title="Rules">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQh-gh-ifZ">
+                                        <rect key="frame" x="439" y="290" width="100" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="poN-UO-U6a"/>
+                                        </constraints>
+                                        <state key="normal" title="Trofy Room">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xVf-EB-ENf">
+                                        <rect key="frame" x="113" y="10" width="385" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FIGURES of FORTUNE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuf-ul-huA">
+                                                <rect key="frame" x="8" y="8" width="70" height="46"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7j-Jr-eOY">
+                                                <rect key="frame" x="86" y="8" width="1" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOTAL REWARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8W-ly-Sl5">
+                                                <rect key="frame" x="104" y="21" width="110" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100,000,000$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-oH-7z8">
+                                                <rect key="frame" x="253" y="21" width="124" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zx1-xR-nc7">
+                                        <rect key="frame" x="89" y="290" width="100" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="hp6-ZD-hwg"/>
+                                        </constraints>
+                                        <state key="normal" title="More Medals">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zt7-ex-DqR" firstAttribute="leading" secondItem="LDv-Gv-SwI" secondAttribute="leading" constant="20" id="1kW-qC-Ss3"/>
+                                    <constraint firstItem="dh9-ho-2MQ" firstAttribute="leading" secondItem="Zx1-xR-nc7" secondAttribute="trailing" constant="100" id="5Ir-YK-6oR"/>
+                                    <constraint firstItem="oQh-gh-ifZ" firstAttribute="centerY" secondItem="dh9-ho-2MQ" secondAttribute="centerY" id="8tJ-gh-TWf"/>
+                                    <constraint firstAttribute="bottom" secondItem="dh9-ho-2MQ" secondAttribute="bottom" constant="15" id="HQv-8k-Siz"/>
+                                    <constraint firstItem="oQh-gh-ifZ" firstAttribute="leading" secondItem="dh9-ho-2MQ" secondAttribute="trailing" constant="100" id="JVS-AL-GCk"/>
+                                    <constraint firstItem="dh9-ho-2MQ" firstAttribute="centerX" secondItem="LDv-Gv-SwI" secondAttribute="centerX" id="KMX-5K-yyC"/>
+                                    <constraint firstItem="gYX-9T-i5Z" firstAttribute="trailing" secondItem="LDv-Gv-SwI" secondAttribute="trailingMargin" id="Ke9-VJ-jyJ"/>
+                                    <constraint firstItem="dh9-ho-2MQ" firstAttribute="centerY" secondItem="Zx1-xR-nc7" secondAttribute="centerY" id="QmP-ZP-aV3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zt7-ex-DqR" secondAttribute="trailing" constant="53" id="TSy-BR-E39"/>
+                                    <constraint firstItem="Zt7-ex-DqR" firstAttribute="top" secondItem="gYX-9T-i5Z" secondAttribute="bottom" constant="45" id="pCX-AU-7Ao"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zt7-ex-DqR" secondAttribute="bottom" constant="69" id="tn4-Uv-XsX"/>
+                                    <constraint firstItem="gYX-9T-i5Z" firstAttribute="top" secondItem="LDv-Gv-SwI" secondAttribute="top" constant="10" id="yay-l4-b1P"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="II5-fc-Hjm">
+                                <rect key="frame" x="0.0" y="0.0" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Lobby"/>
+                                    <segment title="Game"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bgToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tb4-0P-gqF"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djY-9Y-chv" userLabel="Cheat">
+                                <rect key="frame" x="129" y="-2" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="cheat"/>
+                                <connections>
+                                    <action selector="cheatButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Zx-0w-rSM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WC4-x3-h8f" firstAttribute="centerY" secondItem="SED-I4-GdB" secondAttribute="centerY" id="0gL-FG-nw7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="doz-Cr-GBc" secondAttribute="bottom" id="3LJ-AE-8OK"/>
+                            <constraint firstItem="SED-I4-GdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6H3-z9-2Hd"/>
+                            <constraint firstItem="WC4-x3-h8f" firstAttribute="leading" secondItem="SED-I4-GdB" secondAttribute="trailing" id="Cdt-Zc-Aoz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LDv-Gv-SwI" secondAttribute="bottom" constant="20" id="Dpz-kC-Ymh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g8E-AU-4i5" secondAttribute="bottom" id="Kcu-qJ-WNt"/>
+                            <constraint firstItem="doz-Cr-GBc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="L0s-lr-rwf"/>
+                            <constraint firstItem="doz-Cr-GBc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yie-ZF-zBW"/>
+                            <constraint firstItem="LDv-Gv-SwI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZoC-YQ-wzK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LDv-Gv-SwI" secondAttribute="trailing" id="dAi-to-yoB"/>
+                            <constraint firstAttribute="trailing" secondItem="g8E-AU-4i5" secondAttribute="trailing" id="fNw-BA-E6n"/>
+                            <constraint firstItem="g8E-AU-4i5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ihU-sU-PIc"/>
+                            <constraint firstAttribute="trailing" secondItem="doz-Cr-GBc" secondAttribute="trailing" id="jbX-Dw-3x5"/>
+                            <constraint firstItem="SED-I4-GdB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="245" id="nHu-f2-Pfg"/>
+                            <constraint firstItem="LDv-Gv-SwI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="vwX-g1-lcw"/>
+                            <constraint firstItem="g8E-AU-4i5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yGK-wP-uI9"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="YHe-FO-1oB"/>
+                                <exclude reference="U2R-Jo-ihH"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="bgGame" destination="g8E-AU-4i5" id="Ru5-EW-nzw"/>
+                        <outlet property="bgLobby" destination="doz-Cr-GBc" id="4i1-ii-Jhh"/>
+                        <outlet property="chestButton" destination="CTp-BD-yCf" id="xQd-EO-eyT"/>
+                        <outlet property="chestClaimView" destination="YHe-FO-1oB" id="iC5-yM-z8c"/>
+                        <outlet property="collectLabel" destination="JAD-CU-fVS" id="7BR-Jg-jDY"/>
+                        <outlet property="figuresButtonLeadingConstraint" destination="6H3-z9-2Hd" id="pFw-HX-BkW"/>
+                        <outlet property="figurezButton" destination="SED-I4-GdB" id="px8-TB-nw7"/>
+                        <outlet property="figurezCollectionView" destination="Zt7-ex-DqR" id="x0e-Un-969"/>
+                        <outlet property="figurezExpandButton" destination="WC4-x3-h8f" id="jZx-Zp-QdA"/>
+                        <outlet property="figurezView" destination="LDv-Gv-SwI" id="BfX-ab-4ct"/>
+                        <outlet property="gameCheatView" destination="U2R-Jo-ihH" id="bVO-9K-Fsp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="102.99850074962519" y="18.399999999999999"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BG" width="667" height="375"/>
+        <image name="BG Game" width="667" height="375"/>
+        <image name="Rare_Treasure_Chest.png" width="439" height="339"/>
+        <image name="arrow1-right-512.png" width="512" height="512"/>
+        <image name="close-button.png" width="533" height="536"/>
+    </resources>
 </document>

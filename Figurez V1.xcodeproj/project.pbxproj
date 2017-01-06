@@ -7,15 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070FD2AC1E1BB6890028A838 /* Chest disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 070FD2AB1E1BB6890028A838 /* Chest disabled.png */; };
+		070FD2AF1E1BBC3C0028A838 /* FigurezCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070FD2AE1E1BBC3C0028A838 /* FigurezCollectionViewCell.m */; };
+		070FD2B21E1BE7A40028A838 /* MiniFigurezCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070FD2B11E1BE7A40028A838 /* MiniFigurezCollectionViewCell.m */; };
 		073076D01DFEDBAE003D2094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076CF1DFEDBAE003D2094 /* main.m */; };
 		073076D31DFEDBAE003D2094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076D21DFEDBAE003D2094 /* AppDelegate.m */; };
 		073076D61DFEDBAE003D2094 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076D51DFEDBAE003D2094 /* ViewController.m */; };
 		073076D91DFEDBAE003D2094 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073076D71DFEDBAE003D2094 /* Main.storyboard */; };
 		073076DB1DFEDBAE003D2094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073076DA1DFEDBAE003D2094 /* Assets.xcassets */; };
 		073076DE1DFEDBAE003D2094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073076DC1DFEDBAE003D2094 /* LaunchScreen.storyboard */; };
+		073076E71DFEDC7B003D2094 /* Lobby.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 073076E61DFEDC7B003D2094 /* Lobby.PNG */; };
+		073076EA1DFEE04B003D2094 /* UIColor_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076E91DFEE04B003D2094 /* UIColor_Extensions.m */; };
+		073076ED1DFEE081003D2094 /* UIView_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076EC1DFEE081003D2094 /* UIView_Extensions.m */; };
+		076D62161E202F8D00C7AF97 /* arrow1-right-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 076D62151E202F8D00C7AF97 /* arrow1-right-512.png */; };
+		07B6273C1E1552D70074C1AC /* p1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B627371E1552D70074C1AC /* p1.jpg */; };
+		07B6273D1E1552D70074C1AC /* p2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B627381E1552D70074C1AC /* p2.jpg */; };
+		07B6273E1E1552D70074C1AC /* p3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B627391E1552D70074C1AC /* p3.jpg */; };
+		07B6273F1E1552D70074C1AC /* p4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B6273A1E1552D70074C1AC /* p4.jpg */; };
+		07B627401E1552D70074C1AC /* p5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07B6273B1E1552D70074C1AC /* p5.jpg */; };
+		07B627431E1929960074C1AC /* BG Game iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B627411E1929960074C1AC /* BG Game iPad.png */; };
+		07B627441E1929960074C1AC /* BG Game iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B627421E1929960074C1AC /* BG Game iPhone.png */; };
+		07B627461E195ED20074C1AC /* Rare_Treasure_Chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B627451E195ED20074C1AC /* Rare_Treasure_Chest.png */; };
+		07B627481E19646D0074C1AC /* close-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 07B627471E19646D0074C1AC /* close-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070FD2AB1E1BB6890028A838 /* Chest disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chest disabled.png"; sourceTree = "<group>"; };
+		070FD2AD1E1BBC3C0028A838 /* FigurezCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FigurezCollectionViewCell.h; path = "Figurez V1/FigurezCollectionViewCell.h"; sourceTree = SOURCE_ROOT; };
+		070FD2AE1E1BBC3C0028A838 /* FigurezCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FigurezCollectionViewCell.m; path = "Figurez V1/FigurezCollectionViewCell.m"; sourceTree = SOURCE_ROOT; };
+		070FD2B01E1BE7A40028A838 /* MiniFigurezCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniFigurezCollectionViewCell.h; sourceTree = "<group>"; };
+		070FD2B11E1BE7A40028A838 /* MiniFigurezCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniFigurezCollectionViewCell.m; sourceTree = "<group>"; };
 		073076CB1DFEDBAE003D2094 /* Figurez V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Figurez V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073076CF1DFEDBAE003D2094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		073076D11DFEDBAE003D2094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +47,21 @@
 		073076DA1DFEDBAE003D2094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073076DD1DFEDBAE003D2094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073076DF1DFEDBAE003D2094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073076E61DFEDC7B003D2094 /* Lobby.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lobby.PNG; sourceTree = "<group>"; };
+		073076E81DFEE04B003D2094 /* UIColor_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_Extensions.h; sourceTree = "<group>"; };
+		073076E91DFEE04B003D2094 /* UIColor_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_Extensions.m; sourceTree = "<group>"; };
+		073076EB1DFEE081003D2094 /* UIView_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_Extensions.h; sourceTree = "<group>"; };
+		073076EC1DFEE081003D2094 /* UIView_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_Extensions.m; sourceTree = "<group>"; };
+		076D62151E202F8D00C7AF97 /* arrow1-right-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow1-right-512.png"; sourceTree = "<group>"; };
+		07B627371E1552D70074C1AC /* p1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p1.jpg; sourceTree = "<group>"; };
+		07B627381E1552D70074C1AC /* p2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p2.jpg; sourceTree = "<group>"; };
+		07B627391E1552D70074C1AC /* p3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p3.jpg; sourceTree = "<group>"; };
+		07B6273A1E1552D70074C1AC /* p4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p4.jpg; sourceTree = "<group>"; };
+		07B6273B1E1552D70074C1AC /* p5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p5.jpg; sourceTree = "<group>"; };
+		07B627411E1929960074C1AC /* BG Game iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG Game iPad.png"; sourceTree = "<group>"; };
+		07B627421E1929960074C1AC /* BG Game iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG Game iPhone.png"; sourceTree = "<group>"; };
+		07B627451E195ED20074C1AC /* Rare_Treasure_Chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rare_Treasure_Chest.png; sourceTree = "<group>"; };
+		07B627471E19646D0074C1AC /* close-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +78,7 @@
 		073076C21DFEDBAE003D2094 = {
 			isa = PBXGroup;
 			children = (
+				073076E51DFEDC66003D2094 /* Assets */,
 				073076CD1DFEDBAE003D2094 /* Figurez V1 */,
 				073076CC1DFEDBAE003D2094 /* Products */,
 			);
@@ -66,7 +103,13 @@
 				073076DA1DFEDBAE003D2094 /* Assets.xcassets */,
 				073076DC1DFEDBAE003D2094 /* LaunchScreen.storyboard */,
 				073076DF1DFEDBAE003D2094 /* Info.plist */,
+				073076E81DFEE04B003D2094 /* UIColor_Extensions.h */,
+				073076E91DFEE04B003D2094 /* UIColor_Extensions.m */,
+				073076EB1DFEE081003D2094 /* UIView_Extensions.h */,
+				073076EC1DFEE081003D2094 /* UIView_Extensions.m */,
 				073076CE1DFEDBAE003D2094 /* Supporting Files */,
+				070FD2B01E1BE7A40028A838 /* MiniFigurezCollectionViewCell.h */,
+				070FD2B11E1BE7A40028A838 /* MiniFigurezCollectionViewCell.m */,
 			);
 			path = "Figurez V1";
 			sourceTree = "<group>";
@@ -77,6 +120,28 @@
 				073076CF1DFEDBAE003D2094 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		073076E51DFEDC66003D2094 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				076D62151E202F8D00C7AF97 /* arrow1-right-512.png */,
+				070FD2AB1E1BB6890028A838 /* Chest disabled.png */,
+				07B627471E19646D0074C1AC /* close-button.png */,
+				07B627451E195ED20074C1AC /* Rare_Treasure_Chest.png */,
+				07B627411E1929960074C1AC /* BG Game iPad.png */,
+				07B627421E1929960074C1AC /* BG Game iPhone.png */,
+				07B627371E1552D70074C1AC /* p1.jpg */,
+				07B627381E1552D70074C1AC /* p2.jpg */,
+				07B627391E1552D70074C1AC /* p3.jpg */,
+				07B6273A1E1552D70074C1AC /* p4.jpg */,
+				07B6273B1E1552D70074C1AC /* p5.jpg */,
+				073076E61DFEDC7B003D2094 /* Lobby.PNG */,
+				070FD2AD1E1BBC3C0028A838 /* FigurezCollectionViewCell.h */,
+				070FD2AE1E1BBC3C0028A838 /* FigurezCollectionViewCell.m */,
+			);
+			name = Assets;
+			path = "Figurez V1/Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +175,7 @@
 				TargetAttributes = {
 					073076CA1DFEDBAE003D2094 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = G8X7HNQJ73;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,9 +203,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B6273C1E1552D70074C1AC /* p1.jpg in Resources */,
+				07B6273F1E1552D70074C1AC /* p4.jpg in Resources */,
+				073076E71DFEDC7B003D2094 /* Lobby.PNG in Resources */,
 				073076DE1DFEDBAE003D2094 /* LaunchScreen.storyboard in Resources */,
+				07B627461E195ED20074C1AC /* Rare_Treasure_Chest.png in Resources */,
 				073076DB1DFEDBAE003D2094 /* Assets.xcassets in Resources */,
+				070FD2AC1E1BB6890028A838 /* Chest disabled.png in Resources */,
+				076D62161E202F8D00C7AF97 /* arrow1-right-512.png in Resources */,
 				073076D91DFEDBAE003D2094 /* Main.storyboard in Resources */,
+				07B627431E1929960074C1AC /* BG Game iPad.png in Resources */,
+				07B627441E1929960074C1AC /* BG Game iPhone.png in Resources */,
+				07B627481E19646D0074C1AC /* close-button.png in Resources */,
+				07B6273D1E1552D70074C1AC /* p2.jpg in Resources */,
+				07B6273E1E1552D70074C1AC /* p3.jpg in Resources */,
+				07B627401E1552D70074C1AC /* p5.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +231,10 @@
 				073076D61DFEDBAE003D2094 /* ViewController.m in Sources */,
 				073076D31DFEDBAE003D2094 /* AppDelegate.m in Sources */,
 				073076D01DFEDBAE003D2094 /* main.m in Sources */,
+				070FD2AF1E1BBC3C0028A838 /* FigurezCollectionViewCell.m in Sources */,
+				073076EA1DFEE04B003D2094 /* UIColor_Extensions.m in Sources */,
+				073076ED1DFEE081003D2094 /* UIView_Extensions.m in Sources */,
+				070FD2B21E1BE7A40028A838 /* MiniFigurezCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G8X7HNQJ73;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -249,6 +332,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G8X7HNQJ73;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -274,6 +358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hof.Figurez-V1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -285,6 +370,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hof.Figurez-V1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -307,6 +393,7 @@
 				073076E41DFEDBAE003D2094 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
