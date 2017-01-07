@@ -32,7 +32,7 @@
 - (IBAction)gameCheat4:(id)sender;
 - (IBAction)chestButtonTapped:(id)sender;
 - (IBAction)figurezButtonTapped:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *chestButton;
+
 @property (assign) BOOL menuContainerIsShowing;
 
 @property (weak, nonatomic) IBOutlet UIView *blueCoinView;
@@ -58,20 +58,6 @@
     [self resetToLobby];
 //    [_figurezCollectionView registerClass:[FigurezCollectionViewCell class] forCellWithReuseIdentifier:@"FigureCell"];
     // Do any additional setup after loading the view, typically from a nib.
-    [self setInitialSateCollect];
-}
-
-- (void)setInitialSateCollect{
-    _blueCoinView.hidden = true;
-    _yellowCoinView.hidden = true;
-    _redCoinView.hidden = true;
-    _coinsView.hidden = true;
-    _chestImage.hidden = true;
-    _collectButton.hidden = true;
-    _figure1.hidden = true;
-    _figure2.hidden = true;
-    _figure3.hidden = true;
-    _congratsLabel.hidden = true;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -82,7 +68,6 @@
     _bgLobby.hidden = NO;
     _bgGame.hidden = YES;
     _figurezView.hidden = YES;
-    _chestButton.hidden = NO;
     _gameCheatView.hidden = YES;
     _chestClaimView.hidden = YES;
 
@@ -92,7 +77,6 @@
     _bgLobby.hidden = YES;
     _bgGame.hidden = NO;
     _figurezView.hidden = YES;
-    _chestButton.hidden = YES;
     _gameCheatView.hidden = YES;
     _chestClaimView.hidden = YES;
 }
@@ -125,14 +109,12 @@
     _figurezView.hidden = NO;
     _figurezButton.hidden = YES;
     _figurezExpandButton.hidden = YES;
-    _chestButton.hidden = YES;
 }
 
 - (IBAction)figurezViewDismissed:(id)sender {
     _figurezView.hidden = YES;
     _figurezButton.hidden = NO;
     _figurezExpandButton.hidden = NO;
-    _chestButton.hidden = NO;
 }
 
 - (IBAction)bgToggled:(UISegmentedControl *)sender {
@@ -162,10 +144,44 @@
 }
 
 - (void)runGameChestFlowWithEvolution:(BOOL)withEvolution andRankUp:(BOOL)withRankUp {
-    
-    self.chestClaimView.hidden = false;
-    
+     [self setInitialSateCollect];
+    [self showChestWithAnimation];
 }
+
+- (void)setInitialSateCollect{
+    _chestClaimView.hidden = false;
+    _blueCoinView.alpha = 0;
+    _yellowCoinView.alpha = 0;
+    _redCoinView.alpha = 0;
+    _coinsView.alpha = 0;
+    _collectButton.alpha = 0;
+    _figure1.hidden = true;
+    _figure2.hidden = true;
+    _figure3.hidden = true;
+    _congratsLabel.alpha = 0;
+    _chestImage.center = CGPointMake(300, 400);
+}
+
+- (void)showChestWithAnimation{
+    [UIView animateWithDuration:0.5 animations:^{
+        _chestImage.center = CGPointMake(300, 150);
+        _congratsLabel.alpha = 1;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            _chestImage.center = CGPointMake(100, 90);
+            _blueCoinView.alpha = 1;
+            _yellowCoinView.alpha = 1;
+            _redCoinView.alpha = 1;
+            _coinsView.alpha = 1;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                _collectButton.alpha = 1;
+            }];
+        }];
+        
+    }];
+}
+
 - (IBAction)chestButtonTapped:(id)sender {
 }
 

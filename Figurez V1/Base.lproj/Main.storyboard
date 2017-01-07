@@ -352,7 +352,7 @@
                                     <constraint firstItem="gYX-9T-i5Z" firstAttribute="top" secondItem="LDv-Gv-SwI" secondAttribute="top" constant="10" id="yay-l4-b1P"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-FO-1oB" userLabel="Chest Claim View">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-FO-1oB" userLabel="Chest Claim View">
                                 <rect key="frame" x="30" y="40" width="607" height="305"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rare_Treasure_Chest" translatesAutoresizingMaskIntoConstraints="NO" id="3t3-ur-eb6">
@@ -462,14 +462,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.26957783460000001" blue="0.83628571309999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTp-BD-yCf" userLabel="Chest Button">
-                                <rect key="frame" x="150" y="250" width="80" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Rare_Treasure_Chest"/>
-                                <connections>
-                                    <action selector="chestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cDh-MZ-OaH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SED-I4-GdB" userLabel="Figurez button">
                                 <rect key="frame" x="0.0" y="245" width="139" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -545,7 +537,6 @@
                         <outlet property="bgGame" destination="g8E-AU-4i5" id="Ru5-EW-nzw"/>
                         <outlet property="bgLobby" destination="doz-Cr-GBc" id="4i1-ii-Jhh"/>
                         <outlet property="blueCoinView" destination="rBj-ca-k3o" id="oH8-ER-Xtp"/>
-                        <outlet property="chestButton" destination="CTp-BD-yCf" id="xQd-EO-eyT"/>
                         <outlet property="chestClaimView" destination="YHe-FO-1oB" id="iC5-yM-z8c"/>
                         <outlet property="chestImage" destination="3t3-ur-eb6" id="Dwm-0u-A7q"/>
                         <outlet property="coinsView" destination="Yvm-hO-c6M" id="HH5-Gr-Cwc"/>
