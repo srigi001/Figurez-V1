@@ -46,6 +46,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *figure3;
 @property (weak, nonatomic) IBOutlet UILabel *congratsLabel;
 
+@property (assign) BOOL withEvolution;
+@property (assign) BOOL withRankUp;
 @end
 
 @implementation ViewController
@@ -144,7 +146,11 @@
 }
 
 - (void)runGameChestFlowWithEvolution:(BOOL)withEvolution andRankUp:(BOOL)withRankUp {
-     [self setInitialSateCollect];
+    
+    _withEvolution = withEvolution;
+    _withRankUp = withRankUp;
+    
+    [self setInitialSateCollect];
     [self showChestWithAnimation];
 }
 
@@ -201,16 +207,61 @@
             _yellowCoinView.center = _figure2.center;
             _redCoinView.center = _figure3.center;
         } completion:^(BOOL finished) {
+            if (!_withEvolution)
+            {
+                [self noEvolotion];
+            }
+            else
+            {
+                [self withEvolotion];
+            }
+        }];
+    }];
+}
+
+-(void)noEvolotion{
+    [UIView animateWithDuration:0.5 animations:^{
+        _blueCoinView.alpha = 0;
+        _yellowCoinView.alpha = 0;
+        _redCoinView.alpha = 0;
+        _figure1.alpha = 0;
+        _figure2.alpha = 0;
+        _figure3.alpha = 0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            _chestClaimView.alpha = 0;
+        }];
+    }];
+}
+
+-(void)withEvolotion{
+    [UIView animateWithDuration:0.5 animations:^{
+        _yellowCoinView.alpha = 0;
+        _redCoinView.alpha = 0;
+        _figure2.alpha = 0;
+        _figure3.alpha = 0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            _blueCoinView.center = CGPointMake(300, 130);
+            _figure1.center = CGPointMake(300, 130);
+            _blueCoinView.alpha = 0;
+        } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.5 animations:^{
-                _blueCoinView.alpha = 0;
-                _yellowCoinView.alpha = 0;
-                _redCoinView.alpha = 0;
-                _figure1.alpha = 0;
-                _figure2.alpha = 0;
-                _figure3.alpha = 0;
+                CABasicAnimation* rotationAnimation;
+                rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+                rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 2 * 0.3 ];
+                rotationAnimation.duration = 0.3;
+                rotationAnimation.cumulative = YES;
+                rotationAnimation.repeatCount = 2;
+                
+                [_figure1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
             } completion:^(BOOL finished) {
+
                 [UIView animateWithDuration:0.5 animations:^{
-                    _chestClaimView.alpha = 0;
+                    _figure1.size = CGSizeMake(100, 150);
+                    _figure1.image = [UIImage imageNamed:@"p2"];
+                } completion:^(BOOL finished) {
+//                    _chestClaimView.alpha = 0;
                 }];
             }];
         }];
