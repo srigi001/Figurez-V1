@@ -149,6 +149,7 @@
 }
 
 - (void)setInitialSateCollect{
+    _chestClaimView.alpha = 1;
     _chestClaimView.hidden = false;
     _blueCoinView.alpha = 0;
     _yellowCoinView.alpha = 0;
@@ -158,9 +159,13 @@
     _figure1.alpha = 0;
     _figure2.alpha = 0;
     _figure3.alpha = 0;
+    _blueCoinView.center = CGPointMake(440, 90);
+    _yellowCoinView.center = CGPointMake(440, 130);
+    _redCoinView.center = CGPointMake(440, 170);
     _congratsLabel.alpha = 0;
     _chestImage.alpha = 1;
     _chestImage.center = CGPointMake(300, 400);
+    _coinsView.center = CGPointMake(280, 120);
 }
 
 - (void)showChestWithAnimation{
