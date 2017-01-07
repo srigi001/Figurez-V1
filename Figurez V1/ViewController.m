@@ -44,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *figure1;
 @property (weak, nonatomic) IBOutlet UIImageView *figure2;
 @property (weak, nonatomic) IBOutlet UIImageView *figure3;
+@property (weak, nonatomic) IBOutlet UILabel *congratsLabel;
 
 @end
 
@@ -57,6 +58,20 @@
     [self resetToLobby];
 //    [_figurezCollectionView registerClass:[FigurezCollectionViewCell class] forCellWithReuseIdentifier:@"FigureCell"];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setInitialSateCollect];
+}
+
+- (void)setInitialSateCollect{
+    _blueCoinView.hidden = true;
+    _yellowCoinView.hidden = true;
+    _redCoinView.hidden = true;
+    _coinsView.hidden = true;
+    _chestImage.hidden = true;
+    _collectButton.hidden = true;
+    _figure1.hidden = true;
+    _figure2.hidden = true;
+    _figure3.hidden = true;
+    _congratsLabel.hidden = true;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

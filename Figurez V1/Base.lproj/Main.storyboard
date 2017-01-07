@@ -550,6 +550,7 @@
                         <outlet property="chestImage" destination="3t3-ur-eb6" id="Dwm-0u-A7q"/>
                         <outlet property="coinsView" destination="Yvm-hO-c6M" id="HH5-Gr-Cwc"/>
                         <outlet property="collectButton" destination="DvL-7w-AvG" id="6Dm-ph-Ya0"/>
+                        <outlet property="congratsLabel" destination="dve-gP-iei" id="get-MI-cMF"/>
                         <outlet property="figure1" destination="I7q-4b-9aG" id="NGw-ov-ckr"/>
                         <outlet property="figure2" destination="iDy-9V-yLH" id="tdj-qU-WvK"/>
                         <outlet property="figure3" destination="uce-5W-DPB" id="6eB-IE-0dX"/>
