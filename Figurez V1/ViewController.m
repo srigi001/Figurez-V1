@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgLobby;
 @property (weak, nonatomic) IBOutlet UIImageView *bgGame;
 @property (weak, nonatomic) IBOutlet UIButton *figurezButton;
-@property (weak, nonatomic) IBOutlet UILabel *collectLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *figuresButtonLeadingConstraint;
 - (IBAction)gameCheat1:(id)sender;
 - (IBAction)gameCheat2:(id)sender;
@@ -35,6 +34,17 @@
 - (IBAction)figurezButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *chestButton;
 @property (assign) BOOL menuContainerIsShowing;
+
+@property (weak, nonatomic) IBOutlet UIView *blueCoinView;
+@property (weak, nonatomic) IBOutlet UIView *yellowCoinView;
+@property (weak, nonatomic) IBOutlet UIView *redCoinView;
+@property (weak, nonatomic) IBOutlet UIView *coinsView;
+@property (weak, nonatomic) IBOutlet UIImageView *chestImage;
+@property (weak, nonatomic) IBOutlet UIButton *collectButton;
+@property (weak, nonatomic) IBOutlet UIImageView *figure1;
+@property (weak, nonatomic) IBOutlet UIImageView *figure2;
+@property (weak, nonatomic) IBOutlet UIImageView *figure3;
+
 @end
 
 @implementation ViewController
@@ -58,8 +68,8 @@
     _bgGame.hidden = YES;
     _figurezView.hidden = YES;
     _chestButton.hidden = NO;
-    _collectLabel.hidden = NO;
     _gameCheatView.hidden = YES;
+    _chestClaimView.hidden = YES;
 
 }
 
@@ -68,8 +78,8 @@
     _bgGame.hidden = NO;
     _figurezView.hidden = YES;
     _chestButton.hidden = YES;
-    _collectLabel.hidden = YES;
     _gameCheatView.hidden = YES;
+    _chestClaimView.hidden = YES;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,7 +111,6 @@
     _figurezButton.hidden = YES;
     _figurezExpandButton.hidden = YES;
     _chestButton.hidden = YES;
-    _collectLabel.hidden = YES;
 }
 
 - (IBAction)figurezViewDismissed:(id)sender {
@@ -109,7 +118,6 @@
     _figurezButton.hidden = NO;
     _figurezExpandButton.hidden = NO;
     _chestButton.hidden = NO;
-    _collectLabel.hidden = NO;
 }
 
 - (IBAction)bgToggled:(UISegmentedControl *)sender {
@@ -122,6 +130,7 @@
 
     }
 }
+
 - (IBAction)gameCheat1:(id)sender {
     [self runGameChestFlowWithEvolution:NO andRankUp:NO];
 }
@@ -139,7 +148,7 @@
 
 - (void)runGameChestFlowWithEvolution:(BOOL)withEvolution andRankUp:(BOOL)withRankUp {
     
-    
+    self.chestClaimView.hidden = false;
     
 }
 - (IBAction)chestButtonTapped:(id)sender {
