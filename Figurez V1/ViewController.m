@@ -175,7 +175,9 @@
     _congratsLabel.alpha = 0;
     _chestImage.alpha = 1;
     _chestImage.center = CGPointMake(300, 400);
+    _collectButton.frame= CGRectMake(273, 180, 78, 30);
     _coinsView.center = CGPointMake(280, 120);
+    _congratsLabel.text = @"Congratulations";
 }
 
 - (void)showChestWithAnimation{
@@ -201,7 +203,6 @@
     if(_lastStepAfterLevelUp)
     {
         [UIView animateWithDuration:0.8 animations:^{
-            _coinsView.center = CGPointMake(135, -50);
             _collectButton.alpha = 0;
         } completion:^(BOOL finished) {
             _chestClaimView.alpha = 0;
@@ -263,8 +264,9 @@
         _figure1.alpha = 0;
     } completion:^(BOOL finished) {
         _congratsLabel.text = @"All your figures are now at rank 2";
-        _coinsView.center = CGPointMake(430, 170);
-        [UIView animateWithDuration:0.5 animations:^{
+        _collectButton.frame= CGRectMake(273, 180, 78, 30);
+        _coinsView.center = CGPointMake(310, 130);
+        [UIView animateWithDuration:0.8 animations:^{
             _coinsView.alpha = 1;
             _collectButton.alpha = 1;
         } completion:^(BOOL finished) {
