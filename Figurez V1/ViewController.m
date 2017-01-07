@@ -155,10 +155,11 @@
     _redCoinView.alpha = 0;
     _coinsView.alpha = 0;
     _collectButton.alpha = 0;
-    _figure1.hidden = true;
-    _figure2.hidden = true;
-    _figure3.hidden = true;
+    _figure1.alpha = 0;
+    _figure2.alpha = 0;
+    _figure3.alpha = 0;
     _congratsLabel.alpha = 0;
+    _chestImage.alpha = 1;
     _chestImage.center = CGPointMake(300, 400);
 }
 
@@ -179,6 +180,35 @@
             }];
         }];
         
+    }];
+}
+- (IBAction)didPressCollectButton:(id)sender {
+    [UIView animateWithDuration:0.8 animations:^{
+        _chestImage.alpha = 0;
+        _figure1.alpha = 1;
+        _figure2.alpha = 1;
+        _figure3.alpha = 1;
+        _coinsView.center = CGPointMake(135, -50);
+        _collectButton.alpha = 0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            _blueCoinView.center = _figure1.center;
+            _yellowCoinView.center = _figure2.center;
+            _redCoinView.center = _figure3.center;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                _blueCoinView.alpha = 0;
+                _yellowCoinView.alpha = 0;
+                _redCoinView.alpha = 0;
+                _figure1.alpha = 0;
+                _figure2.alpha = 0;
+                _figure3.alpha = 0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5 animations:^{
+                    _chestClaimView.alpha = 0;
+                }];
+            }];
+        }];
     }];
 }
 
