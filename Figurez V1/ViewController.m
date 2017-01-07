@@ -49,6 +49,7 @@
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
 @property (assign) BOOL lastStepAfterEvolution;
+@property (assign) BOOL lastStepAfterLevelUp;
 @end
 
 @implementation ViewController
@@ -166,6 +167,8 @@
     _figure1.alpha = 0;
     _figure2.alpha = 0;
     _figure3.alpha = 0;
+    _figure1.frame = CGRectMake(189, 218, 68, 75);
+    _figure1.image = [UIImage imageNamed:@"p1"];
     _blueCoinView.center = CGPointMake(440, 90);
     _yellowCoinView.center = CGPointMake(440, 130);
     _redCoinView.center = CGPointMake(440, 170);
@@ -195,45 +198,87 @@
     }];
 }
 - (IBAction)didPressCollectButton:(id)sender {
-    if(_lastStepAfterEvolution)
+    if(_lastStepAfterLevelUp)
     {
         [UIView animateWithDuration:0.8 animations:^{
             _coinsView.center = CGPointMake(135, -50);
             _collectButton.alpha = 0;
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
-                _chestClaimView.alpha = 0;
-            }];
+            _chestClaimView.alpha = 0;
+            _lastStepAfterLevelUp = false;
         }];
     }
     else
     {
-        [UIView animateWithDuration:0.8 animations:^{
-            _chestImage.alpha = 0;
-            _figure1.alpha = 1;
-            _figure2.alpha = 1;
-            _figure3.alpha = 1;
-            _coinsView.center = CGPointMake(135, -50);
-            _collectButton.alpha = 0;
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
-                _blueCoinView.center = _figure1.center;
-                _yellowCoinView.center = _figure2.center;
-                _redCoinView.center = _figure3.center;
+        if(_lastStepAfterEvolution)
+        {
+            _lastStepAfterEvolution = false;
+            [UIView animateWithDuration:0.8 animations:^{
+                _coinsView.center = CGPointMake(135, -50);
+                _collectButton.alpha = 0;
             } completion:^(BOOL finished) {
-                if (!_withEvolution)
+                if(_withRankUp)
                 {
-                    [self noEvolotion];
+                    [self withRankUpFlow];
                 }
                 else
                 {
-                    [self withEvolotion];
+                    [self noRankUpFlow];
                 }
             }];
-        }];
+        }
+        else
+        {
+            [UIView animateWithDuration:0.8 animations:^{
+                _chestImage.alpha = 0;
+                _figure1.alpha = 1;
+                _figure2.alpha = 1;
+                _figure3.alpha = 1;
+                _coinsView.center = CGPointMake(135, -50);
+                _collectButton.alpha = 0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5 animations:^{
+                    _blueCoinView.center = _figure1.center;
+                    _yellowCoinView.center = _figure2.center;
+                    _redCoinView.center = _figure3.center;
+                } completion:^(BOOL finished) {
+                    if (_withEvolution)
+                    {
+                        [self withEvolotion];
+                    }
+                    else
+                    {
+                        [self noEvolotion]; 
+                    }
+                }];
+            }];
 
+        }
     }
 }
+
+-(void)withRankUpFlow{
+    _lastStepAfterLevelUp = true;
+    [UIView animateWithDuration:0.8 animations:^{
+        _figure1.alpha = 0;
+    } completion:^(BOOL finished) {
+        _congratsLabel.text = @"All your figures are now at rank 2";
+        _coinsView.center = CGPointMake(430, 170);
+        [UIView animateWithDuration:0.5 animations:^{
+            _coinsView.alpha = 1;
+            _collectButton.alpha = 1;
+        } completion:^(BOOL finished) {
+        
+        }];
+    }];
+}
+
+-(void)noRankUpFlow{
+    [UIView animateWithDuration:0.5 animations:^{
+        _chestClaimView.alpha = 0;
+    }];
+}
+
 
 -(void)noEvolotion{
     [UIView animateWithDuration:0.5 animations:^{
