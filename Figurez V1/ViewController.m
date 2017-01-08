@@ -45,13 +45,11 @@
 
 @property (weak, nonatomic) IBOutlet UIView *blueCoinView;
 @property (weak, nonatomic) IBOutlet UIView *yellowCoinView;
-@property (weak, nonatomic) IBOutlet UIView *redCoinView;
 @property (weak, nonatomic) IBOutlet UIView *coinsView;
 @property (weak, nonatomic) IBOutlet UIImageView *chestImage;
 @property (weak, nonatomic) IBOutlet UIButton *collectButton;
 @property (weak, nonatomic) IBOutlet UIImageView *figure1;
 @property (weak, nonatomic) IBOutlet UIImageView *figure2;
-@property (weak, nonatomic) IBOutlet UIImageView *figure3;
 @property (weak, nonatomic) IBOutlet UILabel *congratsLabel;
 
 @property (assign) BOOL withEvolution;
@@ -182,102 +180,50 @@
     _chestClaimView.hidden = false;
     _blueCoinView.alpha = 0;
     _yellowCoinView.alpha = 0;
-    _redCoinView.alpha = 0;
     _coinsView.alpha = 0;
     _collectButton.alpha = 0;
     _figure1.alpha = 0;
     _figure2.alpha = 0;
-    _figure3.alpha = 0;
-    _figure1.frame = CGRectMake(189, 218, 68, 75);
-    _figure1.image = [UIImage imageNamed:@"p1"];
-    _blueCoinView.center = CGPointMake(440, 90);
-    _yellowCoinView.center = CGPointMake(440, 130);
-    _redCoinView.center = CGPointMake(440, 170);
-    _congratsLabel.alpha = 0;
-    _chestImage.alpha = 1;
-    _chestImage.center = CGPointMake(300, 400);
-    _collectButton.frame= CGRectMake(273, 180, 78, 30);
-    _coinsView.center = CGPointMake(280, 120);
-    _congratsLabel.text = @"Congratulations";
+    _chestImage.centerY = 300;
+//    _figure1.frame = CGRectMake(189, 218, 68, 75);
+//    _figure1.image = [UIImage imageNamed:@"p1"];
+//    _blueCoinView.center = CGPointMake(440, 90);
+//    _yellowCoinView.center = CGPointMake(440, 130);
+//    _redCoinView.center = CGPointMake(440, 170);
+    
+//    _chestImage.alpha = 1;
+//    _chestImage.center = CGPointMake(300, 400);
+//    _collectButton.frame= CGRectMake(273, 180, 78, 30);
+//    _coinsView.center = CGPointMake(280, 120);
+//    _congratsLabel.text = @"Congratulations";
 }
 
 - (void)showChestWithAnimation{
     [UIView animateWithDuration:0.5 animations:^{
-        _chestImage.center = CGPointMake(300, 150);
+        _chestImage.centerY = 100;
         _congratsLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 animations:^{
-            _chestImage.center = CGPointMake(100, 90);
-            _blueCoinView.alpha = 1;
-            _yellowCoinView.alpha = 1;
-            _redCoinView.alpha = 1;
-            _coinsView.alpha = 1;
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.5 animations:^{
-                _collectButton.alpha = 1;
-            }];
+        [UIView animateWithDuration:0.3 animations:^{
+            _collectButton.alpha = 1;
         }];
-        
     }];
+
 }
 
 - (IBAction)didPressCollectButton:(id)sender {
-    if(_lastStepAfterLevelUp)
-    {
+    [UIView animateWithDuration:0.8 animations:^{
+        _collectButton.alpha = 0;
+        _coinsView.alpha = 1;
+        _yellowCoinView.alpha = 1;
+        _blueCoinView.alpha = 1;
+    } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.8 animations:^{
-            _collectButton.alpha = 0;
+            _coinsView.center = CGPointMake(135, -50);
+            
         } completion:^(BOOL finished) {
-            _chestClaimView.alpha = 0;
-            _lastStepAfterLevelUp = false;
+            
         }];
-    }
-    else
-    {
-        if(_lastStepAfterEvolution)
-        {
-            _lastStepAfterEvolution = false;
-            [UIView animateWithDuration:0.8 animations:^{
-                _coinsView.center = CGPointMake(135, -50);
-                _collectButton.alpha = 0;
-            } completion:^(BOOL finished) {
-                if(_withRankUp)
-                {
-                    [self withRankUpFlow];
-                }
-                else
-                {
-                    [self noRankUpFlow];
-                }
-            }];
-        }
-        else
-        {
-            [UIView animateWithDuration:0.8 animations:^{
-                _chestImage.alpha = 0;
-                _figure1.alpha = 1;
-                _figure2.alpha = 1;
-                _figure3.alpha = 1;
-                _coinsView.center = CGPointMake(135, -50);
-                _collectButton.alpha = 0;
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.5 animations:^{
-                    _blueCoinView.center = _figure1.center;
-                    _yellowCoinView.center = _figure2.center;
-                    _redCoinView.center = _figure3.center;
-                } completion:^(BOOL finished) {
-                    if (_withEvolution)
-                    {
-                        [self withEvolotion];
-                    }
-                    else
-                    {
-                        [self noEvolotion]; 
-                    }
-                }];
-            }];
-
-        }
-    }
+    }];
 }
 
 -(void)withRankUpFlow{
@@ -308,10 +254,8 @@
     [UIView animateWithDuration:0.5 animations:^{
         _blueCoinView.alpha = 0;
         _yellowCoinView.alpha = 0;
-        _redCoinView.alpha = 0;
         _figure1.alpha = 0;
         _figure2.alpha = 0;
-        _figure3.alpha = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.5 animations:^{
             _chestClaimView.alpha = 0;
@@ -322,9 +266,7 @@
 -(void)withEvolotion{
     [UIView animateWithDuration:0.5 animations:^{
         _yellowCoinView.alpha = 0;
-        _redCoinView.alpha = 0;
         _figure2.alpha = 0;
-        _figure3.alpha = 0;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.5 animations:^{
             _blueCoinView.center = CGPointMake(300, 130);
