@@ -585,6 +585,25 @@
                                     <action selector="cheatButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Zx-0w-rSM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psa-aM-xIv" userLabel="Figure Card View">
+                                <rect key="frame" x="30" y="40" width="617" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Figure Card" translatesAutoresizingMaskIntoConstraints="NO" id="ceB-if-4cq">
+                                        <rect key="frame" x="0.0" y="0.0" width="617" height="315"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX6-lD-5cr" userLabel="Figure Card Dismiss">
+                                        <rect key="frame" x="570" y="10" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="close-button"/>
+                                        <connections>
+                                            <action selector="figureCardDismissed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c0z-Uw-94u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -624,6 +643,7 @@
                         <outlet property="figure1" destination="I7q-4b-9aG" id="NGw-ov-ckr"/>
                         <outlet property="figure2" destination="iDy-9V-yLH" id="tdj-qU-WvK"/>
                         <outlet property="figure3" destination="uce-5W-DPB" id="6eB-IE-0dX"/>
+                        <outlet property="figureCardView" destination="Psa-aM-xIv" id="9Dk-4k-Vgv"/>
                         <outlet property="figuresButtonLeadingConstraint" destination="6H3-z9-2Hd" id="pFw-HX-BkW"/>
                         <outlet property="figurezButton" destination="SED-I4-GdB" id="px8-TB-nw7"/>
                         <outlet property="figurezCollectionView" destination="Zt7-ex-DqR" id="x0e-Un-969"/>
@@ -644,6 +664,7 @@
         <image name="BG" width="667" height="375"/>
         <image name="BG Game" width="667" height="375"/>
         <image name="Cashier" width="369" height="226"/>
+        <image name="Figure Card" width="358" height="189"/>
         <image name="Rare_Treasure_Chest" width="219" height="169"/>
         <image name="arrow1-right-512" width="256" height="256"/>
         <image name="close-button" width="266" height="268"/>

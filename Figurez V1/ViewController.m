@@ -40,6 +40,8 @@
 - (IBAction)cashierDismissed:(id)sender;
 
 @property (assign) BOOL menuContainerIsShowing;
+@property (weak, nonatomic) IBOutlet UIView *figureCardView;
+- (IBAction)figureCardDismissed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *blueCoinView;
 @property (weak, nonatomic) IBOutlet UIView *yellowCoinView;
@@ -62,12 +64,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- //   _figurezView.backgroundColor = [UIColor colorFromHexString:@"000000" alpha:0.9];
     _figurezView.layer.cornerRadius = 10.0;
     _figuresButtonLeadingConstraint.constant = -_figurezButton.frame.size.width;
     [self resetToLobby];
-//    [_figurezCollectionView registerClass:[FigurezCollectionViewCell class] forCellWithReuseIdentifier:@"FigureCell"];
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -82,7 +82,7 @@
     _chestClaimView.hidden = YES;
     _infoView.hidden = YES;
     _cashierView.hidden = YES;
-
+    _figureCardView.hidden = YES;
 }
 
 - (void)resetToGame {
@@ -93,6 +93,7 @@
     _chestClaimView.hidden = YES;
     _infoView.hidden = YES;
     _cashierView.hidden = YES;
+    _figureCardView.hidden = YES;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -113,6 +114,10 @@
         cell.imgView.image = [UIImage imageNamed:imgName];
         return cell;
     }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    _figureCardView.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -391,5 +396,8 @@
 }
 - (IBAction)cashierDismissed:(id)sender {
     _cashierView.hidden = YES;
+}
+- (IBAction)figureCardDismissed:(id)sender {
+    _figureCardView.hidden = YES;
 }
 @end
