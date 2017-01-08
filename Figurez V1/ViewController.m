@@ -51,6 +51,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *figure1;
 @property (weak, nonatomic) IBOutlet UIImageView *figure2;
 @property (weak, nonatomic) IBOutlet UILabel *congratsLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *blueCoin;
+@property (weak, nonatomic) IBOutlet UIView *blueProgress;
 
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
@@ -192,7 +194,7 @@
 //    _redCoinView.center = CGPointMake(440, 170);
     
 //    _chestImage.alpha = 1;
-//    _chestImage.center = CGPointMake(300, 400);
+    _coinsView.center = CGPointMake(260, 180);
 //    _collectButton.frame= CGRectMake(273, 180, 78, 30);
 //    _coinsView.center = CGPointMake(280, 120);
 //    _congratsLabel.text = @"Congratulations";
@@ -212,20 +214,51 @@
 
 - (IBAction)didPressCollectButton:(id)sender {
     [UIView animateWithDuration:0.8 animations:^{
+        
+        //hide collect button
         _collectButton.alpha = 0;
+        
+        //show coints and badjes
         _coinsView.alpha = 1;
         _yellowCoinView.alpha = 1;
         _blueCoinView.alpha = 1;
+        
     } completion:^(BOOL finished) {
+        
+        sleep(0.3);
         [UIView animateWithDuration:0.8 animations:^{
+            
+            //move coins to wallet
             _coinsView.center = CGPointMake(135, -50);
             
         } completion:^(BOOL finished) {
+          
+            [self moveBlueCoins:3];
             
+            _figure1.alpha = 1;
+            
+
         }];
     }];
 }
 
+-(void)moveBlueCoins:(int)numOfCoins{
+    UIImageView *movingCoin = [[UIImageView alloc] initWithImage:_blueCoin.image];
+    [_chestClaimView addSubview:movingCoin];
+    movingCoin.frame= _blueCoin.frame;
+    movingCoin.center = _blueCoinView.center;
+    
+    [UIView animateWithDuration:0.8 animations:^{
+        movingCoin.center = _figure1.center;
+    } completion:^(BOOL finished) {
+        [movingCoin removeFromSuperview];
+        
+        if (numOfCoins > 1)
+        {
+            [self moveBlueCoins:numOfCoins-1];
+        }
+    }];
+}
 -(void)withRankUpFlow{
     _lastStepAfterLevelUp = true;
     [UIView animateWithDuration:0.8 animations:^{

@@ -502,14 +502,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p2" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-9V-yLH">
-                                        <rect key="frame" x="345" y="226" width="61" height="57"/>
+                                        <rect key="frame" x="412" y="230" width="61" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBj-ca-k3o">
                                         <rect key="frame" x="345" y="166" width="49" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-v7-fLY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-v7-fLY">
                                                 <rect key="frame" x="1" y="5" width="17" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -564,7 +564,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p1" translatesAutoresizingMaskIntoConstraints="NO" id="I7q-4b-9aG">
-                                        <rect key="frame" x="249" y="226" width="61" height="57"/>
+                                        <rect key="frame" x="183" y="230" width="61" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvL-7w-AvG">
@@ -579,6 +579,16 @@
                                             <action selector="didPressCollectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DZQ-qH-cg1"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZw-Js-sqV">
+                                        <rect key="frame" x="183" y="221" width="30" height="9"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Lh-kgT">
+                                        <rect key="frame" x="412" y="221" width="30" height="9"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -611,7 +621,9 @@
                     <connections>
                         <outlet property="bgGame" destination="g8E-AU-4i5" id="Ru5-EW-nzw"/>
                         <outlet property="bgLobby" destination="doz-Cr-GBc" id="4i1-ii-Jhh"/>
+                        <outlet property="blueCoin" destination="Vkh-cn-ydu" id="j3z-3g-P5Y"/>
                         <outlet property="blueCoinView" destination="rBj-ca-k3o" id="oH8-ER-Xtp"/>
+                        <outlet property="blueProgress" destination="rZw-Js-sqV" id="9eO-WK-QXS"/>
                         <outlet property="cashierView" destination="PQe-jc-251" id="Bum-71-cGD"/>
                         <outlet property="chestClaimView" destination="YHe-FO-1oB" id="iC5-yM-z8c"/>
                         <outlet property="chestImage" destination="3t3-ur-eb6" id="Dwm-0u-A7q"/>
