@@ -54,6 +54,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *blueCoin;
 @property (weak, nonatomic) IBOutlet UIView *blueProgress;
 @property (weak, nonatomic) IBOutlet UIView *yellowPreogress;
+@property (weak, nonatomic) IBOutlet UIImageView *yellowCoin;
 
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
@@ -191,6 +192,8 @@
     _blueProgress.alpha = 0;
     _yellowPreogress.alpha = 0;
     _coinsView.center = CGPointMake(260, 180);
+    _blueProgress.width = 20;
+    _yellowPreogress.width = 20;
 }
 
 - (void)showChestWithAnimation{
@@ -241,10 +244,10 @@
     movingCoin.frame= _blueCoin.frame;
     movingCoin.center = _blueCoinView.center;
     
-    [UIView animateWithDuration:0.8 animations:^{
+    [UIView animateWithDuration:0.5 animations:^{
         movingCoin.center = _figure1.center;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.8 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             _blueProgress.width = _blueProgress.width + 10;
         }];
         
@@ -254,8 +257,46 @@
         {
             [self moveBlueCoins:numOfCoins-1];
         }
+        else
+        {
+            _blueCoinView.alpha = 0;
+            _yellowPreogress.alpha = 1;
+            _yellowCoinView.alpha = 1;
+            _figure2.alpha = 1;
+            [self moveYellowCoins:2];
+        }
     }];
 }
+
+-(void)moveYellowCoins:(int)numOfCoins{
+    UIImageView *movingCoin = [[UIImageView alloc] initWithImage:_yellowCoin.image];
+    [_chestClaimView addSubview:movingCoin];
+    movingCoin.frame= _yellowCoin.frame;
+    movingCoin.center = _yellowCoinView.center;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        movingCoin.center = _figure2.center;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+            _yellowPreogress.width = _yellowPreogress.width + 10;
+        }];
+        
+        [movingCoin removeFromSuperview];
+        
+        if (numOfCoins > 1)
+        {
+            [self moveYellowCoins:numOfCoins-1];
+        }
+        else
+        {
+            _yellowCoinView.alpha = 0;
+            [UIView animateWithDuration:0.5 animations:^{
+                _chestClaimView.alpha = 0;
+            }];
+        }
+    }];
+}
+
 -(void)withRankUpFlow{
     _lastStepAfterLevelUp = true;
     [UIView animateWithDuration:0.8 animations:^{

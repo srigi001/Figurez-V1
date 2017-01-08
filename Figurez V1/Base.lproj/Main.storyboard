@@ -585,7 +585,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DB4-Lh-kgT">
-                                        <rect key="frame" x="412" y="221" width="30" height="9"/>
+                                        <rect key="frame" x="412" y="221" width="20" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -640,6 +640,7 @@
                         <outlet property="figurezView" destination="LDv-Gv-SwI" id="BfX-ab-4ct"/>
                         <outlet property="gameCheatView" destination="U2R-Jo-ihH" id="bVO-9K-Fsp"/>
                         <outlet property="infoView" destination="Ocb-GW-QOg" id="5MB-St-lGy"/>
+                        <outlet property="yellowCoin" destination="cEC-0f-DvQ" id="zqh-Gb-Bgx"/>
                         <outlet property="yellowCoinView" destination="yqx-Tg-YGo" id="5kT-Kf-axK"/>
                         <outlet property="yellowPreogress" destination="DB4-Lh-kgT" id="nMg-4i-fw7"/>
                     </connections>
