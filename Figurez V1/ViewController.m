@@ -201,7 +201,7 @@
         _chestImage.centerY = 100;
         _congratsLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:1 animations:^{
             _collectButton.alpha = 1;
         }];
     }];
@@ -289,9 +289,13 @@
         }
         else
         {
-            _yellowCoinView.alpha = 0;
-            [UIView animateWithDuration:0.5 animations:^{
-                _chestClaimView.alpha = 0;
+            [UIView animateWithDuration:0.3 animations:^{
+                _yellowCoinView.alpha = 0;
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.8 animations:^{
+                    _chestClaimView.alpha = 0;
+                }];
+                
             }];
         }
     }];
