@@ -26,12 +26,18 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgGame;
 @property (weak, nonatomic) IBOutlet UIButton *figurezButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *figuresButtonLeadingConstraint;
+- (IBAction)moreMedalsTapped:(id)sender;
 - (IBAction)gameCheat1:(id)sender;
 - (IBAction)gameCheat2:(id)sender;
 - (IBAction)gameCheat3:(id)sender;
 - (IBAction)gameCheat4:(id)sender;
 - (IBAction)chestButtonTapped:(id)sender;
 - (IBAction)figurezButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+- (IBAction)infoDismissed:(id)sender;
+- (IBAction)infoButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *cashierView;
+- (IBAction)cashierDismissed:(id)sender;
 
 @property (assign) BOOL menuContainerIsShowing;
 
@@ -74,6 +80,8 @@
     _figurezView.hidden = YES;
     _gameCheatView.hidden = YES;
     _chestClaimView.hidden = YES;
+    _infoView.hidden = YES;
+    _cashierView.hidden = YES;
 
 }
 
@@ -83,6 +91,8 @@
     _figurezView.hidden = YES;
     _gameCheatView.hidden = YES;
     _chestClaimView.hidden = YES;
+    _infoView.hidden = YES;
+    _cashierView.hidden = YES;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,6 +114,7 @@
         return cell;
     }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -132,6 +143,10 @@
     }
 }
 
+- (IBAction)moreMedalsTapped:(id)sender {
+    _cashierView.hidden = NO;
+}
+
 - (IBAction)gameCheat1:(id)sender {
     [self runGameChestFlowWithEvolution:NO andRankUp:NO];
 }
@@ -145,6 +160,7 @@
 }
 
 - (IBAction)gameCheat4:(id)sender {
+    
 }
 
 - (void)runGameChestFlowWithEvolution:(BOOL)withEvolution andRankUp:(BOOL)withRankUp {
@@ -199,6 +215,7 @@
         
     }];
 }
+
 - (IBAction)didPressCollectButton:(id)sender {
     if(_lastStepAfterLevelUp)
     {
@@ -363,5 +380,16 @@
     _menuContainerIsShowing = !_menuContainerIsShowing;
 
     
+}
+- (IBAction)infoDismissed:(id)sender {
+    _infoView.hidden = YES;
+}
+
+- (IBAction)infoButtonTapped:(id)sender {
+    [self.view bringSubviewToFront:_infoView];
+    _infoView.hidden = NO;
+}
+- (IBAction)cashierDismissed:(id)sender {
+    _cashierView.hidden = YES;
 }
 @end
