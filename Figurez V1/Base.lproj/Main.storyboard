@@ -580,7 +580,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZw-Js-sqV">
-                                        <rect key="frame" x="183" y="221" width="30" height="9"/>
+                                        <rect key="frame" x="183" y="221" width="20" height="9"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -641,6 +641,7 @@
                         <outlet property="gameCheatView" destination="U2R-Jo-ihH" id="bVO-9K-Fsp"/>
                         <outlet property="infoView" destination="Ocb-GW-QOg" id="5MB-St-lGy"/>
                         <outlet property="yellowCoinView" destination="yqx-Tg-YGo" id="5kT-Kf-axK"/>
+                        <outlet property="yellowPreogress" destination="DB4-Lh-kgT" id="nMg-4i-fw7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -53,6 +53,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *congratsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *blueCoin;
 @property (weak, nonatomic) IBOutlet UIView *blueProgress;
+@property (weak, nonatomic) IBOutlet UIView *yellowPreogress;
 
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
@@ -187,17 +188,9 @@
     _figure1.alpha = 0;
     _figure2.alpha = 0;
     _chestImage.centerY = 300;
-//    _figure1.frame = CGRectMake(189, 218, 68, 75);
-//    _figure1.image = [UIImage imageNamed:@"p1"];
-//    _blueCoinView.center = CGPointMake(440, 90);
-//    _yellowCoinView.center = CGPointMake(440, 130);
-//    _redCoinView.center = CGPointMake(440, 170);
-    
-//    _chestImage.alpha = 1;
+    _blueProgress.alpha = 0;
+    _yellowPreogress.alpha = 0;
     _coinsView.center = CGPointMake(260, 180);
-//    _collectButton.frame= CGRectMake(273, 180, 78, 30);
-//    _coinsView.center = CGPointMake(280, 120);
-//    _congratsLabel.text = @"Congratulations";
 }
 
 - (void)showChestWithAnimation{
@@ -236,7 +229,7 @@
             [self moveBlueCoins:3];
             
             _figure1.alpha = 1;
-            
+            _blueProgress.alpha = 1;
 
         }];
     }];
@@ -251,6 +244,10 @@
     [UIView animateWithDuration:0.8 animations:^{
         movingCoin.center = _figure1.center;
     } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.8 animations:^{
+            _blueProgress.width = _blueProgress.width + 10;
+        }];
+        
         [movingCoin removeFromSuperview];
         
         if (numOfCoins > 1)
