@@ -265,7 +265,7 @@
     [UIView animateWithDuration:0.7 animations:^{
         movingCoin.center = _figure1.center;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             _blueProgress.width = _blueProgress.width + 10;
         }];
         
@@ -299,31 +299,31 @@
     [UIView animateWithDuration:0.5 animations:^{
         movingCoin.center = _figure2.center;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             _yellowPreogress.width = _yellowPreogress.width + 10;
+        } completion:^(BOOL finished) {
+            [movingCoin removeFromSuperview];
+            
+            if (numOfCoins > 1)
+            {
+                [self moveYellowCoins:numOfCoins-1];
+            }
+            else
+            {
+                [UIView animateWithDuration:0.3 animations:^{
+                    _yellowCoinView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    if(_withEvolution)
+                    {
+                        [self evolutionFlow];
+                    }
+                    else
+                    {
+                        [self regularFlowFinish];
+                    }
+                }];
+            }
         }];
-        
-        [movingCoin removeFromSuperview];
-        
-        if (numOfCoins > 1)
-        {
-            [self moveYellowCoins:numOfCoins-1];
-        }
-        else
-        {
-            [UIView animateWithDuration:0.3 animations:^{
-                _yellowCoinView.alpha = 0;
-            } completion:^(BOOL finished) {
-                if(_withEvolution)
-                {
-                    [self evolutionFlow];
-                }
-                else
-                {
-                    [self regularFlowFinish];
-                }
-            }];
-        }
     }];
 }
 
@@ -335,27 +335,33 @@
 }
 
 -(void)evolutionFlow{
-    [UIView animateWithDuration:0.5 animations:^{
+    
+    _yellowPreogress.alpha = 0;
+    
+    [UIView animateWithDuration:1 animations:^{
         _chestImage.alpha = 0;
         _figure1.alpha = 0;
         _blueProgress.alpha = 0;
-        _yellowPreogress.alpha = 0;
-        _figure2.frame = CGRectMake(260, 85, 110, 115);
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.8 animations:^{
-            CABasicAnimation* rotationAnimation;
-            rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-            rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 2 * 0.3 ];
-            rotationAnimation.duration = 0.3;
-            rotationAnimation.cumulative = YES;
-            rotationAnimation.repeatCount = 2;
-            [_figure2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-            
+        _figure2.width = _figure2.width * 2;
+        _figure2.height = _figure2.height * 1.3;
+        _figure2.top = _congratsLabel.bottom + 15;
+        _figure2.centerX = _chestClaimView.centerX;
+        CABasicAnimation* rotationAnimation;
+        rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 2 * 0.3 ];
+        rotationAnimation.duration = 0.3;
+        rotationAnimation.cumulative = YES;
+        rotationAnimation.repeatCount = 2;
+        [_figure2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+        
         } completion:^(BOOL finished) {
-            _collectButtonAfterEvolution.alpha = 1;
-            _coinsView.alpha = 1;
-            _coinsView.center = CGPointMake(210, 140);
-        }];
+            _coinsView.centerY = _figure2.centerY;
+            _coinsView.right = _figure2.left - 30;
+            
+            [UIView animateWithDuration:0.8 animations:^{
+                _collectButtonAfterEvolution.alpha = 1;
+                _coinsView.alpha = 1;
+            }];
     }];
 }
 - (IBAction)didPressCollectAfterEvolution:(id)sender {
@@ -365,7 +371,7 @@
         _coinsView.center = CGPointMake(135, -150);
         _collectButtonAfterEvolution.alpha = 0;
     } completion:^(BOOL finished) {
-        sleep(0.5);
+        sleep(1);
         [UIView animateWithDuration:0.8 animations:^{
             
             _chestClaimView.alpha = 0;
