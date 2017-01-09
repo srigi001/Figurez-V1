@@ -17,6 +17,7 @@
 		073076DE1DFEDBAE003D2094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073076DC1DFEDBAE003D2094 /* LaunchScreen.storyboard */; };
 		073076EA1DFEE04B003D2094 /* UIColor_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076E91DFEE04B003D2094 /* UIColor_Extensions.m */; };
 		073076ED1DFEE081003D2094 /* UIView_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 073076EC1DFEE081003D2094 /* UIView_Extensions.m */; };
+		8570B8071E23CA3700EDA1D3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8570B8051E23CA3700EDA1D3 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		073076E91DFEE04B003D2094 /* UIColor_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_Extensions.m; sourceTree = "<group>"; };
 		073076EB1DFEE081003D2094 /* UIView_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_Extensions.h; sourceTree = "<group>"; };
 		073076EC1DFEE081003D2094 /* UIView_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_Extensions.m; sourceTree = "<group>"; };
+		8570B8061E23CA3700EDA1D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				073076D41DFEDBAE003D2094 /* ViewController.h */,
 				073076D51DFEDBAE003D2094 /* ViewController.m */,
 				073076D71DFEDBAE003D2094 /* Main.storyboard */,
+				8570B8051E23CA3700EDA1D3 /* Main_iPad.storyboard */,
 				073076DA1DFEDBAE003D2094 /* Assets.xcassets */,
 				073076DC1DFEDBAE003D2094 /* LaunchScreen.storyboard */,
 				073076DF1DFEDBAE003D2094 /* Info.plist */,
@@ -169,6 +172,7 @@
 			files = (
 				073076DE1DFEDBAE003D2094 /* LaunchScreen.storyboard in Resources */,
 				073076DB1DFEDBAE003D2094 /* Assets.xcassets in Resources */,
+				8570B8071E23CA3700EDA1D3 /* Main_iPad.storyboard in Resources */,
 				073076D91DFEDBAE003D2094 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +211,14 @@
 				073076DD1DFEDBAE003D2094 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8570B8051E23CA3700EDA1D3 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8570B8061E23CA3700EDA1D3 /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
