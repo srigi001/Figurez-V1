@@ -701,6 +701,7 @@
                         <outlet property="coinsView" destination="Yvm-hO-c6M" id="HH5-Gr-Cwc"/>
                         <outlet property="collectButton" destination="DvL-7w-AvG" id="6Dm-ph-Ya0"/>
                         <outlet property="collectButtonAfterEvolution" destination="qfj-mJ-i2W" id="xg6-2K-wQJ"/>
+                        <outlet property="collectChestShortcutButton" destination="bh9-Og-QoP" id="aV2-on-LBP"/>
                         <outlet property="congratsLabel" destination="dve-gP-iei" id="get-MI-cMF"/>
                         <outlet property="figure1" destination="I7q-4b-9aG" id="NGw-ov-ckr"/>
                         <outlet property="figure2" destination="iDy-9V-yLH" id="tdj-qU-WvK"/>

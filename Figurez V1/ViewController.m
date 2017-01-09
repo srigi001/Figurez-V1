@@ -13,6 +13,7 @@
 #import "MiniFigurezCollectionViewCell.h"
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UIButton *collectChestShortcutButton;
 @property (weak, nonatomic) IBOutlet UIButton *figurezExpandButton;
 - (IBAction)figurezExpandButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *chestClaimView;
@@ -70,6 +71,7 @@
 @property (assign) CGRect figure2InitialFrame;
 @property (assign) CGRect coinsInitialFrame;
 @property (assign) CGRect newChestAvailbleInitialFrame;
+@property (assign) CGRect bigChestInitialFrame;
 
 @end
 
@@ -84,6 +86,7 @@
     _chestInitialFrame = _chestImage.frame;
     _coinsInitialFrame = _coinsView.frame;
     _newChestAvailbleInitialFrame = _chestAvailbleButton.frame;
+    _bigChestInitialFrame = _bigChestImage.frame;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -99,6 +102,7 @@
     _infoView.hidden = YES;
     _cashierView.hidden = YES;
     _figureCardView.hidden = YES;
+    _collectChestShortcutButton.hidden = NO;
 }
 
 - (void)resetToGame {
@@ -110,6 +114,7 @@
     _infoView.hidden = YES;
     _cashierView.hidden = YES;
     _figureCardView.hidden = YES;
+    _collectChestShortcutButton.hidden = YES;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -199,6 +204,9 @@
 }
 - (IBAction)didPressNewChest:(id)sender {
     _chestAvailbleButton.hidden = true;
+    _chestAvailbleButton.frame = _newChestAvailbleInitialFrame;
+    _bigChestImage.frame = _bigChestInitialFrame;
+    
     [UIView animateWithDuration:0.5 animations:^{
         _chestDetailsView.alpha = 1;
     }];
