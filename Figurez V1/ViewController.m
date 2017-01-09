@@ -64,6 +64,7 @@
 
 @property (assign) CGRect chestInitialFrame;
 @property (assign) CGRect figure2InitialFrame;
+@property (assign) CGRect coinsInitialFrame;
 
 @end
 
@@ -76,6 +77,7 @@
     [self resetToLobby];
     _figure2InitialFrame = _figure2.frame;
     _chestInitialFrame = _chestImage.frame;
+    _coinsInitialFrame = _coinsView.frame;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -199,7 +201,7 @@
     _blueProgress.alpha = 0;
     _yellowPreogress.alpha = 0;
     _coinsView.alpha = 0;
-    _coinsView.center = CGPointMake(260, 180);
+    _coinsView.frame = _coinsInitialFrame;
     _blueProgress.width = 20;
     _yellowPreogress.width = 20;
     _collectButtonAfterEvolution.alpha = 0;
@@ -210,7 +212,7 @@
         _chestImage.frame = _chestInitialFrame;
         _congratsLabel.alpha = 1;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             _collectButton.alpha = 1;
         }];
     }];
@@ -229,21 +231,23 @@
         _blueCoinView.alpha = 1;
         
     } completion:^(BOOL finished) {
-        
-        sleep(0.3);
-        [UIView animateWithDuration:0.8 animations:^{
-            
-            //move coins to wallet
-            _coinsView.center = CGPointMake(135, -50);
-            
-        } completion:^(BOOL finished) {
-          
-            [self moveBlueCoins:3];
-            
-            _figure1.alpha = 1;
-            _blueProgress.alpha = 1;
+        [self moveCointToWallet];
+    }];
+}
 
-        }];
+-(void)moveCointToWallet{
+    sleep(0.8);
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        //move coins to wallet
+        _coinsView.center = CGPointMake(135, -150);
+        
+    } completion:^(BOOL finished) {
+        [self moveBlueCoins:3];
+        
+        _figure1.alpha = 1;
+        _blueProgress.alpha = 1;
+        
     }];
 }
 
@@ -253,7 +257,12 @@
     movingCoin.frame= _blueCoin.frame;
     movingCoin.center = _blueCoinView.center;
     
-    [UIView animateWithDuration:0.5 animations:^{
+    if (numOfCoins == 1)
+    {
+        _blueCoinView.alpha = 0;
+    }
+    
+    [UIView animateWithDuration:0.7 animations:^{
         movingCoin.center = _figure1.center;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.5 animations:^{
@@ -268,7 +277,6 @@
         }
         else
         {
-            _blueCoinView.alpha = 0;
             _yellowPreogress.alpha = 1;
             _yellowCoinView.alpha = 1;
             _figure2.alpha = 1;
@@ -282,6 +290,11 @@
     [_chestClaimView addSubview:movingCoin];
     movingCoin.frame= _yellowCoin.frame;
     movingCoin.center = _yellowCoinView.center;
+    
+    if (numOfCoins == 1)
+    {
+        _yellowCoinView.alpha = 0;
+    }
     
     [UIView animateWithDuration:0.5 animations:^{
         movingCoin.center = _figure2.center;
@@ -315,7 +328,7 @@
 }
 
 -(void)regularFlowFinish{
-    sleep(0.5);
+    sleep(2);
     [UIView animateWithDuration:0.8 animations:^{
         _chestClaimView.alpha = 0;
     }];
@@ -349,7 +362,7 @@
     [UIView animateWithDuration:0.8 animations:^{
         
         //move coins to wallet
-        _coinsView.center = CGPointMake(135, -50);
+        _coinsView.center = CGPointMake(135, -150);
         _collectButtonAfterEvolution.alpha = 0;
     } completion:^(BOOL finished) {
         sleep(0.5);
