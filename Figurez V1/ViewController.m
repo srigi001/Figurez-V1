@@ -61,6 +61,10 @@
 @property (assign) BOOL lastStepAfterEvolution;
 @property (weak, nonatomic) IBOutlet UIButton *collectButtonAfterEvolution;
 @property (assign) BOOL lastStepAfterLevelUp;
+
+@property (assign) CGRect chestInitialFrame;
+@property (assign) CGRect figure2InitialFrame;
+
 @end
 
 @implementation ViewController
@@ -70,7 +74,8 @@
     _figurezView.layer.cornerRadius = 10.0;
     _figuresButtonLeadingConstraint.constant = -_figurezButton.frame.size.width;
     [self resetToLobby];
-
+    _figure2InitialFrame = _figure2.frame;
+    _chestInitialFrame = _chestImage.frame;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -189,8 +194,8 @@
     _collectButton.alpha = 0;
     _figure1.alpha = 0;
     _figure2.alpha = 0;
-    _figure2.frame = CGRectMake(412, 230, 61, 57);
-    _chestImage.centerY = 300;
+    _figure2.frame = _figure2InitialFrame;
+    _chestImage.centerY = _chestImage.height*4;
     _blueProgress.alpha = 0;
     _yellowPreogress.alpha = 0;
     _coinsView.alpha = 0;
@@ -202,7 +207,7 @@
 
 - (void)showChestWithAnimation{
     [UIView animateWithDuration:0.5 animations:^{
-        _chestImage.centerY = 100;
+        _chestImage.frame = _chestInitialFrame;
         _congratsLabel.alpha = 1;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:1 animations:^{
