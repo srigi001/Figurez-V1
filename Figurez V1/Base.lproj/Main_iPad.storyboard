@@ -614,6 +614,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rare_Treasure_Chest" translatesAutoresizingMaskIntoConstraints="NO" id="3K8-ui-H0c" userLabel="bigChest">
+                                <rect key="frame" x="337" y="234" width="350" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlj-9Y-kGl">
+                                <rect key="frame" x="975" y="50" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="newChestAvailble"/>
+                                <connections>
+                                    <action selector="didPressNewChest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cph-zF-IpQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -658,10 +670,12 @@
                     <connections>
                         <outlet property="bgGame" destination="g8E-AU-4i5" id="Ru5-EW-nzw"/>
                         <outlet property="bgLobby" destination="doz-Cr-GBc" id="4i1-ii-Jhh"/>
+                        <outlet property="bigChestImage" destination="3K8-ui-H0c" id="HcY-S3-YvN"/>
                         <outlet property="blueCoin" destination="Vkh-cn-ydu" id="j3z-3g-P5Y"/>
                         <outlet property="blueCoinView" destination="rBj-ca-k3o" id="oH8-ER-Xtp"/>
                         <outlet property="blueProgress" destination="rZw-Js-sqV" id="9eO-WK-QXS"/>
                         <outlet property="cashierView" destination="PQe-jc-251" id="Bum-71-cGD"/>
+                        <outlet property="chestAvailbleButton" destination="mlj-9Y-kGl" id="7qj-e8-Lwh"/>
                         <outlet property="chestClaimView" destination="YHe-FO-1oB" id="iC5-yM-z8c"/>
                         <outlet property="chestImage" destination="3t3-ur-eb6" id="Dwm-0u-A7q"/>
                         <outlet property="coinsView" destination="Yvm-hO-c6M" id="HH5-Gr-Cwc"/>
@@ -702,6 +716,7 @@
         <image name="coin_yellow" width="60" height="60"/>
         <image name="coins" width="244" height="300"/>
         <image name="gold" width="235" height="220"/>
+        <image name="newChestAvailble" width="150" height="100"/>
         <image name="p1" width="205" height="234"/>
         <image name="p2" width="207" height="261"/>
         <image name="star" width="25" height="25"/>

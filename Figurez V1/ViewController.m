@@ -61,11 +61,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *collectButtonAfterEvolution;
 @property (weak, nonatomic) IBOutlet UILabel *rankUpCongrats;
 @property (weak, nonatomic) IBOutlet UIButton *rankUpCollectButton;
+@property (weak, nonatomic) IBOutlet UIButton *chestAvailbleButton;
 ;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bigChestImage;
 @property (assign) CGRect chestInitialFrame;
 @property (assign) CGRect figure2InitialFrame;
 @property (assign) CGRect coinsInitialFrame;
+@property (assign) CGRect newChestAvailbleInitialFrame;
 
 @end
 
@@ -79,6 +82,7 @@
     _figure2InitialFrame = _figure2.frame;
     _chestInitialFrame = _chestImage.frame;
     _coinsInitialFrame = _coinsView.frame;
+    _newChestAvailbleInitialFrame = _chestAvailbleButton.frame;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -176,8 +180,28 @@
 }
 
 - (IBAction)gameCheat4:(id)sender {
+    _gameCheatView.hidden = true;
+    [UIView animateWithDuration:0.5 animations:^{
+        _bigChestImage.alpha = 1;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.8 animations:^{
+            _bigChestImage.frame = CGRectMake(972, 2, 45, 38);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.8 animations:^{
+                _bigChestImage.alpha = 0;
+            } completion:^(BOOL finished) {
+                _chestAvailbleButton.hidden = false;
+                [UIView animateWithDuration:0.5 animations:^{
+                    _chestAvailbleButton.frame = CGRectMake(856, 50, 164, 100);
+                }];
+            }];
+        }];
+    }];
     
 }
+- (IBAction)didPressNewChest:(id)sender {
+}
+
 - (IBAction)didPressChestShortcut:(id)sender {
     _withEvolution = true;
     _withRankUp = true;
