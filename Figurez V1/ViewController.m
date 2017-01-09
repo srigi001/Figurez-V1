@@ -180,7 +180,7 @@
 }
 - (IBAction)didPressChestShortcut:(id)sender {
     _withEvolution = true;
-    _withRankUp = false;
+    _withRankUp = true;
     
     [self setInitialSateCollect];
     [self showChestWithAnimation];
