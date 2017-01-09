@@ -58,9 +58,10 @@
 
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
-@property (assign) BOOL lastStepAfterEvolution;
 @property (weak, nonatomic) IBOutlet UIButton *collectButtonAfterEvolution;
-@property (assign) BOOL lastStepAfterLevelUp;
+@property (weak, nonatomic) IBOutlet UILabel *rankUpCongrats;
+@property (weak, nonatomic) IBOutlet UIButton *rankUpCollectButton;
+;
 
 @property (assign) CGRect chestInitialFrame;
 @property (assign) CGRect figure2InitialFrame;
@@ -185,6 +186,8 @@
     
     [self setInitialSateCollect];
     [self showChestWithAnimation];
+    
+    _gameCheatView.hidden = true;
 }
 
 - (void)setInitialSateCollect{
@@ -205,6 +208,8 @@
     _blueProgress.width = 20;
     _yellowPreogress.width = 20;
     _collectButtonAfterEvolution.alpha = 0;
+    _rankUpCongrats.alpha = 0;
+    _rankUpCollectButton.alpha = 0;
 }
 
 - (void)showChestWithAnimation{
@@ -371,6 +376,44 @@
         _coinsView.center = CGPointMake(135, -150);
         _collectButtonAfterEvolution.alpha = 0;
     } completion:^(BOOL finished) {
+        
+        if (_withRankUp)
+        {
+            [self withRankUpFlow];
+        }
+        else
+        {
+            sleep(1);
+            
+            [UIView animateWithDuration:0.8 animations:^{
+                
+                _chestClaimView.alpha = 0;
+            }];
+        }
+    }];
+
+}
+
+-(void)withRankUpFlow{
+    [UIView animateWithDuration:0.8 animations:^{
+        _figure2.alpha = 0;
+    } completion:^(BOOL finished) {
+        _coinsView.centerX = _rankUpCongrats.centerX;
+        _coinsView.top = _rankUpCongrats.bottom + 10;
+        [UIView animateWithDuration:0.8 animations:^{
+            _rankUpCongrats.alpha = 1;
+            _coinsView.alpha = 1;
+            _rankUpCollectButton.alpha = 1;
+        }];
+    }];
+}
+- (IBAction)didPressCollectAfterRankUp:(id)sender {
+    [UIView animateWithDuration:0.8 animations:^{
+        
+        //move coins to wallet
+        _coinsView.center = CGPointMake(135, -150);
+        _rankUpCollectButton.alpha = 0;
+    } completion:^(BOOL finished) {
         sleep(1);
         [UIView animateWithDuration:0.8 animations:^{
             
@@ -379,33 +422,6 @@
     }];
 
 }
-
--(void)withRankUpFlow{
-    _lastStepAfterLevelUp = true;
-    [UIView animateWithDuration:0.8 animations:^{
-        _figure1.alpha = 0;
-    } completion:^(BOOL finished) {
-        _congratsLabel.text = @"All your figures are now at rank 2";
-        _collectButton.frame= CGRectMake(273, 180, 78, 30);
-        _coinsView.center = CGPointMake(310, 130);
-        [UIView animateWithDuration:0.8 animations:^{
-            _coinsView.alpha = 1;
-            _collectButton.alpha = 1;
-        } completion:^(BOOL finished) {
-        
-        }];
-    }];
-}
-
--(void)noRankUpFlow{
-    [UIView animateWithDuration:0.5 animations:^{
-        _chestClaimView.alpha = 0;
-    }];
-}
-
-- (IBAction)chestButtonTapped:(id)sender {
-}
-
 
 - (IBAction)cheatButtonTapped:(id)sender {
     if (_bgGame.hidden) {

@@ -472,7 +472,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHe-FO-1oB" userLabel="Chest Claim View">
                                 <rect key="frame" x="30" y="40" width="964" height="698"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratiolations!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dve-gP-iei">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dve-gP-iei">
                                         <rect key="frame" x="351" y="32" width="263" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
@@ -545,6 +545,18 @@
                                         <rect key="frame" x="249" y="455" width="133" height="134"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvL-7w-AvG">
+                                        <rect key="frame" x="415" y="298" width="134" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Open">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressCollectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DZQ-qH-cg1"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZw-Js-sqV">
                                         <rect key="frame" x="249" y="435" width="47" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -567,16 +579,23 @@
                                             <action selector="didPressCollectAfterEvolution:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wM-XE-DZk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvL-7w-AvG">
-                                        <rect key="frame" x="415" y="298" width="134" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All your figures are now at rank 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J45-2A-oRZ">
+                                        <rect key="frame" x="290" y="117" width="385" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtC-bG-WBq">
+                                        <rect key="frame" x="415" y="371" width="134" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Open">
+                                        <state key="normal" title="Collect">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressCollectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DZQ-qH-cg1"/>
+                                            <action selector="didPressCollectAfterRankUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IOS-vI-ZaA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -646,6 +665,8 @@
                         <outlet property="figurezView" destination="LDv-Gv-SwI" id="BfX-ab-4ct"/>
                         <outlet property="gameCheatView" destination="U2R-Jo-ihH" id="bVO-9K-Fsp"/>
                         <outlet property="infoView" destination="Ocb-GW-QOg" id="5MB-St-lGy"/>
+                        <outlet property="rankUpCollectButton" destination="EtC-bG-WBq" id="bK3-i3-lTq"/>
+                        <outlet property="rankUpCongrats" destination="J45-2A-oRZ" id="hKZ-cc-9pb"/>
                         <outlet property="yellowCoin" destination="cEC-0f-DvQ" id="zqh-Gb-Bgx"/>
                         <outlet property="yellowCoinView" destination="yqx-Tg-YGo" id="5kT-Kf-axK"/>
                         <outlet property="yellowPreogress" destination="DB4-Lh-kgT" id="nMg-4i-fw7"/>
