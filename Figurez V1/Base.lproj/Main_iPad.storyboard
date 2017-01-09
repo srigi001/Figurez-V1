@@ -626,6 +626,25 @@
                                     <action selector="didPressNewChest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cph-zF-IpQ"/>
                                 </connections>
                             </button>
+                            <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRE-70-bY3" userLabel="Chest details">
+                                <rect key="frame" x="30" y="40" width="964" height="688"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chestDetails" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-g8-CZC" userLabel="chest details">
+                                        <rect key="frame" x="0.0" y="0.0" width="964" height="688"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZB-PQ-LOU" userLabel="Card Dismiss">
+                                        <rect key="frame" x="895" y="28" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="close-button"/>
+                                        <connections>
+                                            <action selector="didPressDismisChestDetails:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wbe-tn-Spa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -677,6 +696,7 @@
                         <outlet property="cashierView" destination="PQe-jc-251" id="Bum-71-cGD"/>
                         <outlet property="chestAvailbleButton" destination="mlj-9Y-kGl" id="7qj-e8-Lwh"/>
                         <outlet property="chestClaimView" destination="YHe-FO-1oB" id="iC5-yM-z8c"/>
+                        <outlet property="chestDetailsView" destination="VRE-70-bY3" id="hPz-Vd-MBE"/>
                         <outlet property="chestImage" destination="3t3-ur-eb6" id="Dwm-0u-A7q"/>
                         <outlet property="coinsView" destination="Yvm-hO-c6M" id="HH5-Gr-Cwc"/>
                         <outlet property="collectButton" destination="DvL-7w-AvG" id="6Dm-ph-Ya0"/>
@@ -711,6 +731,7 @@
         <image name="Figure Card" width="358" height="189"/>
         <image name="Rare_Treasure_Chest" width="219" height="169"/>
         <image name="arrow1-right-512" width="256" height="256"/>
+        <image name="chestDetails" width="664" height="393"/>
         <image name="close-button" width="266" height="268"/>
         <image name="coin_blue" width="78" height="79"/>
         <image name="coin_yellow" width="60" height="60"/>

@@ -55,6 +55,7 @@
 @property (weak, nonatomic) IBOutlet UIView *blueProgress;
 @property (weak, nonatomic) IBOutlet UIView *yellowPreogress;
 @property (weak, nonatomic) IBOutlet UIImageView *yellowCoin;
+@property (weak, nonatomic) IBOutlet UIView *chestDetailsView;
 
 @property (assign) BOOL withEvolution;
 @property (assign) BOOL withRankUp;
@@ -187,21 +188,27 @@
         [UIView animateWithDuration:0.8 animations:^{
             _bigChestImage.frame = CGRectMake(972, 2, 45, 38);
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.8 animations:^{
-                _bigChestImage.alpha = 0;
-            } completion:^(BOOL finished) {
-                _chestAvailbleButton.hidden = false;
-                [UIView animateWithDuration:0.5 animations:^{
-                    _chestAvailbleButton.frame = CGRectMake(856, 50, 164, 100);
-                }];
+            _bigChestImage.alpha = 0;
+            _chestAvailbleButton.hidden = false;
+            [UIView animateWithDuration:0.4 animations:^{
+                _chestAvailbleButton.frame = CGRectMake(856, 50, 164, 100);
             }];
         }];
     }];
     
 }
 - (IBAction)didPressNewChest:(id)sender {
+    _chestAvailbleButton.hidden = true;
+    [UIView animateWithDuration:0.5 animations:^{
+        _chestDetailsView.alpha = 1;
+    }];
 }
 
+- (IBAction)didPressDismisChestDetails:(id)sender {
+    [UIView animateWithDuration:0.5 animations:^{
+        _chestDetailsView.alpha = 0;
+    }];
+}
 - (IBAction)didPressChestShortcut:(id)sender {
     _withEvolution = true;
     _withRankUp = true;
