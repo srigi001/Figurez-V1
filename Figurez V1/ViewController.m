@@ -178,6 +178,13 @@
 - (IBAction)gameCheat4:(id)sender {
     
 }
+- (IBAction)didPressChestShortcut:(id)sender {
+    _withEvolution = true;
+    _withRankUp = false;
+    
+    [self setInitialSateCollect];
+    [self showChestWithAnimation];
+}
 
 - (void)runGameChestFlowWithEvolution:(BOOL)withEvolution andRankUp:(BOOL)withRankUp {
     
