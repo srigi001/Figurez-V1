@@ -191,12 +191,12 @@
         _bigChestImage.alpha = 1;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.8 animations:^{
-            _bigChestImage.frame = CGRectMake(972, 2, 45, 38);
+            _bigChestImage.frame = CGRectMake(self.view.width - 50, 2, 45, 38);
         } completion:^(BOOL finished) {
             _bigChestImage.alpha = 0;
             _chestAvailbleButton.hidden = false;
             [UIView animateWithDuration:0.4 animations:^{
-                _chestAvailbleButton.frame = CGRectMake(856, 50, 164, 100);
+                _chestAvailbleButton.frame = CGRectMake(self.view.width - _chestAvailbleButton.width * 2 - 5, 30, _chestAvailbleButton.width * 2, _chestAvailbleButton.height * 2);
             }];
         }];
     }];
